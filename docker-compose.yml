@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - 'POSTGRES_ROOT_PASSWORD=postgres!'
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=mysecretpassword!'
+      - 'POSTGRES_DB=postgres'
+    networks:
+      - portfolio
+
+  talent-job:
+    image: talent-job
+    ports:
+      - "9999:9999"
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
+    depends_on:
+      - postgres
+    networks:
+      - portfolio
+
+networks:
+  portfolio:

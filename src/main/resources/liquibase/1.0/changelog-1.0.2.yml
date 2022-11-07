@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: Create talent table
+      author: Rasim Babayev
+      changes:
+        - createTable:
+            tableName: talent
+            columns:
+              - column:
+                  name: id
+                  type: varchar(255)
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(100)
+              - column:
+                  name: last_name
+                  type: varchar(100)
+              - column:
+                  name: age
+                  type: int
+              - column:
+                  name: created_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+              - column:
+                  name: updated_at
+                  type: timestamp
+                  defaultValue: now()
+                  constraints:
+                    nullable: false
+
+            remarks: Table to store information about talents
