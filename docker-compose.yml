@@ -8,9 +8,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - 'POSTGRES_ROOT_PASSWORD=postgres!'
+      - 'POSTGRES_ROOT_PASSWORD=postgres'
       - 'POSTGRES_USER=postgres'
-      - 'POSTGRES_PASSWORD=mysecretpassword!'
+      - 'POSTGRES_PASSWORD=mysecretpassword'
       - 'POSTGRES_DB=postgres'
     networks:
       - portfolio
@@ -18,7 +18,7 @@ services:
   talent-job:
     image: talent-job
     ports:
-      - "9999:9999"
+      - "8099:8099"
     restart: always
     environment:
       - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/postgres
