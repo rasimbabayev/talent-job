@@ -12,4 +12,4 @@ Due to the fact that this is a test project, the tests are not completely done
 
 ## To run project use
 
-`docker build .`
+`docker build --tag talent-job .`
