@@ -2,12 +2,10 @@ package com.portfolio.hire.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.portfolio.hire.model.request.JobRequestDto;
-import com.portfolio.hire.service.JobService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.web.servlet.MockMvc;
@@ -25,9 +23,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class JobControllerTests {
 
     private MockMvc mockMvc;
-
-    @Mock
-    private JobService jobService;
 
     @InjectMocks
     private JobController jobController;
